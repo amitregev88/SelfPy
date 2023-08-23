@@ -6,3 +6,10 @@ def last_early(my_str):
         return False
     else:
         return True
+    
+
+    """
+    def last_early(my_str):
+    x = my_str.upper()
+    return x[-1] in x[:-1]
+    """
