@@ -17,3 +17,11 @@ else:
     print("invalid temperature intput\n")
     
 
+    """
+    source = input("Enter the temperature you would like to convert: ")
+if source[-1] == 'f' or source[-1] == 'F':
+    print((float(source[:-1]) * 5 - 160) / 9)
+if source[-1] == 'c' or source[-1] == 'C':
+    print((float(source[:-1]) * 9 + 160) / 5)
+    """
+

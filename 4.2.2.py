@@ -8,3 +8,4 @@ if string == rev_str:
 else:
     print("NOT\n")
     
+
