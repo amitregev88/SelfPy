@@ -25,14 +25,27 @@ def remove_product_from_the_list(shopping_list_str):
 
     output_str = shopping_list_str.replace(to_remove, "",1)
 
+    # incase the element to remove is first in the list
+    if output_str[0] == ',':
+        output_str =  output_str[1::]
+
+    # incase the element to remove is last in the list
+    elif output_str[-1] == ',':
+        output_str =  output_str[0:-1:]
+
+    # incase the element to remove is middle in the list
+    else:
+        output_str =  output_str.replace(",,",",")
+
+
     return output_str
 
 
-def add_product_to_the_list(to_add):
+def add_product_to_the_list(shopping_list_str):
 
     to_add = input("Which product to add?\n")
 
-    shopping_list_str += to_add
+    return shopping_list_str + to_add
 
 # def print_invalid_product(shopping_list_str):
 
@@ -82,7 +95,7 @@ def menu():
             shopping_list_str = remove_product_from_the_list(shopping_list_str)
 
         elif selection_num == 6:
-            add_product_to_the_list(shopping_list_str)
+            shopping_list_str = add_product_to_the_list(shopping_list_str)
 
         elif selection_num == 7:
 
