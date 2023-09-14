@@ -40,20 +40,31 @@ def remove_product_from_the_list(shopping_list_str):
 
     return output_str
 
-
 def add_product_to_the_list(shopping_list_str):
 
     to_add = input("Which product to add?\n")
 
-    return shopping_list_str + to_add
+    return shopping_list_str + "," + to_add
 
-# def print_invalid_product(shopping_list_str):
-
-
-# def Removing_duplicates_in_list(shopping_list_str)
+def print_invalid_products(shopping_list_str):
+    shopping_list = shopping_list_str.split(',')
+    # print(shopping_list)
     
+    invalid_products_list = []
 
+    for invalid_product in shopping_list:
+        if len(invalid_product) < 3 or invalid_product.isalpha() == False:
 
+            invalid_products_list.append(invalid_product)
+
+    print(','.join(invalid_products_list))
+
+def Removing_duplicates_in_list(shopping_list_str):
+    not_dup = []
+    shopping_list = shopping_list_str.split(',')
+    [not_dup.append(i) for i in shopping_list if i not in not_dup]
+    list_without_dup = ','.join(not_dup)
+    return list_without_dup
 
 def menu():
 
@@ -99,12 +110,11 @@ def menu():
 
         elif selection_num == 7:
 
-            print("TODO")
-
+            print_invalid_products(shopping_list_str)
+            
         elif selection_num == 8:
 
-            print("TODO")
-
+             shopping_list_str = Removing_duplicates_in_list(shopping_list_str)
 
         elif selection_num == 9:
 
@@ -114,11 +124,42 @@ def menu():
 
             print("Invalid selection\n")
 
-
 def main():
 
     menu()
 
-
 if __name__ == "__main__":
     main()
+
+
+#     def main():
+#     """Applies actions on list of items according to the input command.
+#     first input: list of items, seperate by ','
+#     second input: command number (1-9)
+#     """
+#     my_list=input("Enter grocery list: ").split(',')
+#     command = None
+#     while command != 9:
+#         command = int(input("Enter command: "))
+#         if command == 1:
+#             print(my_list)
+#         if command == 2:
+#             print(len(my_list))
+#         if command == 3:
+#             check_for = input("check for an item: ")
+#             print(check_for in my_list)
+#         if command == 4:
+#             check_for = input("count an item: ")
+#             print(my_list.count(check_for))
+#         if command == 5:
+#             my_list.remove(input("remove an item: "))
+#         if command == 6:
+#             my_list.append(input("add an item: "))
+#         if command == 7:
+#             print([item for item in my_list if (len(item) <3 or not item.isalpha())])
+#         if command == 8:
+#             my_list= list(set(my_list))
+
+
+# if __name__ == "__main__":
+#     main()
