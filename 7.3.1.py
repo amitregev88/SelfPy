@@ -1,46 +1,41 @@
-def arrow(my_char, max_length):
-     
-    arrow_output = ''
+def show_hidden_word(secret_word, old_letters_guessed):
 
-    line = 1 
-    
-    if line == max_length:
-        return my_char
-
-    
-    for line in range(1 ,max_length + 1, 1):
-        arrow_output += my_char * line + "\n"
+    to_return = ["_"] * len(secret_word)
 
 
+ 
+    for i, letter_in_secret_word in enumerate(secret_word):
 
-    for line in range(max_length - 1, 0, -1):
-        arrow_output += (my_char) * line + "\n"
+        for letter_in_old_letters_guessed in old_letters_guessed:
 
-    return arrow_output[:-1]
+            if letter_in_secret_word ==  letter_in_old_letters_guessed:
+
+                to_return[i] = letter_in_secret_word
+
+    return " ".join(to_return)
 
 
-
-
-# def arrow(my_char, max_length):
-#     """
-#     Draw an errow-shape, built of the input character.
-#     :param my_char: the chararter to nuild the errow with
-#     :param max_length: length of the longest raw in the shape
-#     :type my_char: character
-#     :type max_length: int
-#     :return: the errow shape
+# def show_hidden_word (secret_word, old_letters_guessed):
+#     """Displays guessed letters in the secret word, and '_' for letters that were
+#     not guessed yet
+#     :param: secret_word: the word to be guessed
+#     :param: old_lettes_guessed: the letters that were guessted (user's input)
+#     :type secret_word: list
+#     :type old_lettes_guessed: list
+#     :return: the updated list, with all guessed letters
 #     :rtype: list
 #     """
 #     result = ''
-#     for i in range(1, max_length+1):
-#         result = result + (my_char * i) + '\n'
-#     for i in range(max_length-1, 0, -1):
-#         result = result + (my_char * i) + '\n'
+#     for letter in secret_word:
+#         if letter in old_letters_guessed:
+#             result = result + letter + ' '
+#         else:
+#             result = result + "_ "
 #     return result[:-1]
+   
 
-# """
-# Checks the function (not neccesary for the solution)
-# """
 # if __name__ == "__main__":
-#     print(arrow('D', 1))
-#     print(arrow('*', 5))
+
+
+#     print(show_hidden_word("typewriter",['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p']))
+
