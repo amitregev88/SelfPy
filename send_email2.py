@@ -1,3 +1,9 @@
+# Write a script in Python that sends an email if the condition exists in Excel that locate in share point 
+# pip install pandas openpyxl Office365-REST-Python-Client
+
+
+
+
 import pandas as pd
 from office365.runtime.auth.authentication_context import AuthenticationContext
 from office365.sharepoint.client_context import ClientContext
