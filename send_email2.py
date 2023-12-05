@@ -11,17 +11,17 @@ import smtplib
 from email.mime.text import MIMEText
 
 # SharePoint credentials
-sharepoint_url = "https://your-sharepoint-url.com/sites/your-site"
-username = "your-username"
-password = "your-password"
+sharepoint_url = "https://klatencor.sharepoint.com"
+username = "Amit.Regev@kla-tencor.com"
+password = "2wsx@WSX"
 
 # Email credentials
-sender_email = "your-email@example.com"
-receiver_email = "receiver-email@example.com"
-smtp_server = "smtp.example.com"
+sender_email = "Amit.Regev@kla-tencor.com"
+receiver_email = "Amit.Regev@kla-tencor.com"
+smtp_server = "smtp-mail.outlook.com"
 smtp_port = 587
-smtp_username = "smtp-username"
-smtp_password = "smtp-password"
+smtp_username = "Amit.Regev@kla-tencor.com"git
+smtp_password = "2wsx@WSX"
 
 # Read Excel file from SharePoint
 def read_excel_from_sharepoint():
@@ -33,7 +33,7 @@ def read_excel_from_sharepoint():
         ctx.execute_query()
 
         # Specify the path to the Excel file in SharePoint
-        file_path = "/sites/your-site/Shared Documents/YourExcelFile.xlsx"
+        file_path = "https://klatencor.sharepoint.com/:x:/r/teams/IT-Israel/Shared%20Documents/Cellphones%20(Partner)/Cellphones%20asset%20management.xlsx"
 
         # Download the Excel file
         response = ctx.web.get_file_by_server_relative_path(file_path).download().execute_query()
@@ -49,7 +49,7 @@ def read_excel_from_sharepoint():
 # Send email if the condition exists
 def send_email_if_condition_exists(df):
     # Your condition logic goes here
-    condition_exists = df['YourColumnName'].any() == 'YourCondition'
+    condition_exists = df['K'].any() == '=K2<TODAY()'
 
     if condition_exists:
         # Email content
