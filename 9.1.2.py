@@ -55,7 +55,3 @@ fname.close()
 # 		num=int(input("Enter real number: "))
 # 		for i in range(num):
 # 			print(l[-num+i])
-
-    
-
-
