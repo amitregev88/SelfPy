@@ -19,8 +19,7 @@ def who_is_missing(file_name):
 
 def main():
        
-
-
+# run the function
     who_is_missing("nums.txt")
     
     
