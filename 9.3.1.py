@@ -70,3 +70,5 @@ if __name__ == "__main__":
 # 		else:
 # 			artist_count[line_list[1]] = 1
 # 	return max(song_lengths, key=song_lengths.get), length, max(artist_count, key=artist_count.get)
+    
+    
