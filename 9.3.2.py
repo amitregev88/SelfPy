@@ -44,7 +44,7 @@ def my_mp4_playlist(file_path, new_song):
         
 def main():
        
-    my_mp4_playlist("songs.txt","Hello")
+    my_mp4_playlist("words.txt",3)
     
 if __name__ == "__main__":
     main()
