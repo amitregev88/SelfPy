@@ -12,7 +12,7 @@ def try_update_letter_guessed(letter_guessed, old_letters_guessed):
     else:
 
         old_letters_guessed.sort()
-        print("X\n" + " -> ".join(old_letters_guessed))
+    print("X\n" + " -> ".join(old_letters_guessed))
 
     return res
 
